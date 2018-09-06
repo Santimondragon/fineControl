@@ -1,0 +1,78 @@
+article {
+    box-sizing: border-box;
+    flex: 0 1 auto;
+    margin: 0;
+    padding: 35px 40px;
+    width: 500px;
+    background: #fff;
+    border-radius: 2px;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    form {
+        width: 100%;
+        span {
+            font-size: 14px;
+            margin-bottom: 30px;
+            color: #777;
+            font-weight: 600;
+            color: #008b8b;
+        }
+        input {
+            margin-bottom: 20px;
+            margin-top: 10px;
+            width: 100%;
+            height: 40px;
+            box-sizing: border-box;
+            padding: 0;
+            border: none;
+            outline: none;
+            text-indent: 10px;
+            border-bottom: solid 1px  #9999993d;
+            transition: all 0.1s ease;
+            &:focus {
+                border-bottom: solid 2px  #008b8b;
+            }
+            &:hover{
+                border-bottom: solid 2px  #008b8b;
+                cursor: pointer;
+            }
+            &::placeholder {
+                color: #aaa;
+                font-size: 10px;
+            }
+        }
+        
+        button {
+            box-sizing: border-box;
+            font-weight: 600;
+            padding: 0;
+            margin-bottom: 10px;
+            width: 100%;
+            height: 50px;
+            border: none;
+            background: #008b8b;
+            color: white;
+            border-radius: 2px;
+            outline: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            &:hover{
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+                background: #028585;
+            }
+            &#toLogin {
+                background: #fff;
+                color: #008b8b;
+                &:hover {
+                    background: rgb(250, 250, 250);
+                }
+            }
+        }
+    }
+}
+

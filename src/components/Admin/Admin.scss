@@ -1,0 +1,96 @@
+.admin {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    justify-content: flex-start;
+    header {
+        box-sizing: border-box;
+        height: 8vh;
+        width: 100%;
+        background: #008b8b;
+        position: relative;
+        z-index: 999;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-end;
+        padding: 20px;
+        button {
+            box-sizing: border-box;
+            font-weight: 600;
+            padding: 0;
+            width: 200px;
+            height: 30px;
+            border: none;
+            background: #fff;
+                color: #008b8b;
+            border-radius: 2px;
+            outline: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+            &:hover{
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+                background: rgb(250, 250, 250);
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100vw;
+        height: 92vh;
+        border-radius: 0;
+        .sideBar {
+            width: 8vw;
+            height: 100%;
+            background: rgb(0, 100, 100);
+            border-radius: 0;
+            box-shadow:2px 0 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 99;
+            overflow: hidden;
+        }
+        .dashboard {
+            width: 92vw;
+            height: 100%;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-content: stretch;
+            align-items: flex-start;
+            justify-content: flex-start;
+            background: #f3f3f3;
+            article{
+                margin: 1vw;
+                background: #fff;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+                flex: 0 0 auto;
+            }
+
+            &::-webkit-scrollbar {
+                width: 1vw;
+            }
+             
+            &::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            }
+             
+            &::-webkit-scrollbar-thumb {
+              background-color: #00525238;;
+              outline: 1px solid slategrey;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .dashboard {
+        overflow-y: scroll;
+    }
+}

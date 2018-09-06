@@ -1,0 +1,38 @@
+#send {
+    box-sizing: border-box;
+    padding: 0;
+    height: 15vw;
+    width: 15vw;
+    margin-right: 1vw;
+    button {
+        border: none;
+        outline: none;
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        background: #fafafa;
+        color: #008b8b;
+        transition: ease 0.2s all;
+        &:hover {
+            cursor: pointer;
+            background: #f1f1f1;
+        }
+    }
+    .undone {
+        background: #afafaf;
+        color: #dfdfdf;
+        transition: ease 0.2s all;
+        &:hover {
+            cursor: auto;
+            background: #afafaf;
+        }
+    }
+}
+
+@media only screen and (max-width: 760) {
+    #send {
+        height: 20vw;
+        width: 98%;
+        margin-left: 1vw;
+    }
+}
