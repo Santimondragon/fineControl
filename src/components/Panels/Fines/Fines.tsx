@@ -13,7 +13,7 @@ const Fines = observer(() => {
                         onClick={() => {
                             store.onChangeFineSelected(elem)
                         }}
-                        className={store.fineSelected === elem ? 'selected' : ''}
+                        className={store.fineSelected === elem ? 'fineSelected' : ''}
                         style={{
                             display: store.fineSelected[3] === "Applied" || "Dismissed" ? "flex": "none"
                         }}
@@ -26,25 +26,26 @@ const Fines = observer(() => {
             </ul>
             <div className="botones">
                 <button className="no-multar" onClick={() => {
-                    if(document.querySelector(".selected") as HTMLElement === null){
+                    if(document.querySelector(".fineSelected") as HTMLElement === null){
                         alert("Selecciona una multa")
                     } else{ 
-                        (document.querySelector(".selected") as HTMLElement).style.display = "none";
-                        (document.querySelector(".selected") as HTMLElement).className = "dismissed"
+                        (document.querySelector(".fineSelected") as HTMLElement).style.display = "none";
+                        (document.querySelector(".fineSelected") as HTMLElement).className = "dismissed"
                         const num = store.appliedDismissed - 1;
                         store.onFineModified(num);
-                        alert("Multa Eliminada");
+                        const house = JSON.stringify(store.fineSelected);
+                        store.viewDebtUpdate(JSON.parse(house).house);
                     }  
                 }}
                 >
                 Dismiss</button>
                 <button className="multar"
                 onClick={() => {
-                    if(document.querySelector(".selected") as HTMLElement === null){
+                    if(document.querySelector(".fineSelected") as HTMLElement === null){
                         alert("Fine Dismissed")
                     } else{ 
-                        (document.querySelector(".selected") as HTMLElement).style.display = "none";
-                        (document.querySelector(".selected") as HTMLElement).className = "applied"
+                        (document.querySelector(".fineSelected") as HTMLElement).style.display = "none";
+                        (document.querySelector(".fineSelected") as HTMLElement).className = "applied"
                         const num = store.appliedDismissed - 1;
                         store.onFineModified(num);
                         const fineArray = JSON.stringify(store.fineSelected);
@@ -52,7 +53,6 @@ const Fines = observer(() => {
                         const house = finalFineArray.house;
                         const reason = finalFineArray.reason;
                         store.onFineListModified(house + " - "+ reason);
-                        alert("Fine Applied");
                     }            
                 }}
                 

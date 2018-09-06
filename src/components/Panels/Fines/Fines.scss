@@ -55,11 +55,8 @@
             h2 {
                 font-size: 11px;
             }
-            &::selection {
-                background: none;
-            }
         }
-        .selected {
+        .fineSelected {
             background: darkcyan;
             color: white;
         }

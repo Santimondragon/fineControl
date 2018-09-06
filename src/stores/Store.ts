@@ -83,8 +83,13 @@ class Store {
         this.password = newPass;
     };
 
-    @action accountVerification() {
-
+    @action viewDebtUpdate(str: string) {
+        for (let i = 0; i < this.houses.length; i++) {
+            if(str === this.houses[i][0]) {
+                const toChange = this.houses[i].splice(1, 1, 'upToDate');
+                console.log(toChange);
+            }           
+        }
     }
 
     @action register() {
