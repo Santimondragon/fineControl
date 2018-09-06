@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 
-
 import './Fines.scss';
 import { store } from '../../../stores/Store';
 
@@ -34,6 +33,7 @@ const Fines = observer(() => {
                         (document.querySelector(".selected") as HTMLElement).className = "dismissed"
                         const num = store.appliedDismissed - 1;
                         store.onFineModified(num);
+                        alert("Multa Eliminada");
                     }  
                 }}
                 >
@@ -41,7 +41,7 @@ const Fines = observer(() => {
                 <button className="multar"
                 onClick={() => {
                     if(document.querySelector(".selected") as HTMLElement === null){
-                        alert("Selecciona una multa")
+                        alert("Fine Dismissed")
                     } else{ 
                         (document.querySelector(".selected") as HTMLElement).style.display = "none";
                         (document.querySelector(".selected") as HTMLElement).className = "applied"
@@ -52,6 +52,7 @@ const Fines = observer(() => {
                         const house = finalFineArray.house;
                         const reason = finalFineArray.reason;
                         store.onFineListModified(house + " - "+ reason);
+                        alert("Fine Applied");
                     }            
                 }}
                 

@@ -9,7 +9,7 @@
     position: absolute;
     display: flex;
     padding: 20px;
-    ul{
+    ul {
         padding: 0;
         margin: 0;
         width: inherit;
@@ -32,14 +32,21 @@
                 padding: 0;
                 margin: 0;
                 width: 100%;
-                padding-bottom: 100%;
+                padding-bottom: 95%;
                 background: #f5f5f5;
                 display: flex;
                 position: relative;
                 transition: ease 0.2s all;
                 box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
                 border-radius: 4px;
-                
+                font-weight: 400;
+                &::before {
+                    content: "";
+                    font-family: 'Open Sans', sans-serif;
+                    color: red;
+                    position: absolute;
+                    font-weight: bold;
+                }
                 &:hover {
                     cursor: pointer;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -50,12 +57,36 @@
                     top: 40%;
                     width: 100%;
                     font-size: 13px;
-                    font-weight: 600;
+                    &::selection {
+                        background: none;
+                    }
                 }
             }
             .selected {
-                background: darkcyan;
-                color: white;
+                background: rgb(240, 240, 240);
+                color: black;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                }
+                &.inDebt {
+                    background: rgb(255, 210, 210);
+                    border: solid 3px rgb(255, 100, 100);
+                    font-weight: 600;
+                }
+                &.upToDate {
+                    background: rgb(190, 240, 240);
+                    border: solid 3px rgb(40, 170, 170);
+                    font-weight: 600;
+                }
+            }
+            .inDebt {
+                border: solid 3px rgb(255, 130, 130);
+            } 
+            .upToDate {
+                border: solid 3px rgb(110, 190, 190);
             }
         }
     }

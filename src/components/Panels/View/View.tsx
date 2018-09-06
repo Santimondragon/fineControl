@@ -16,8 +16,10 @@ const View = observer(() => {
                         }
                     >
                         <div
-                            className={store.houseSelected === elem ? 'selected' : ''}
-
+                            className={store.houseSelected === elem ? 'selected '+elem[1] : ''+elem[1]}
+                            onDoubleClick={() => {
+                                alert(elem[0]+" "+elem[1]);
+                            }}
                         ><span>{elem[0]}</span>
                         </div>
                     </li>

@@ -9,7 +9,10 @@ const Send = observer(() => {
     return (
         <article id="send">
             <button
-                className={store.appliedDismissed <= 0 ? "done":"undone"}>
+                className={store.appliedDismissed <= 0 ? "done":"undone"}
+                onClick={()=>{
+                    alert("Sending...")
+                }}>
                 SEND
             </button>
         </article>

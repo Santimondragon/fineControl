@@ -55,6 +55,9 @@
             h2 {
                 font-size: 11px;
             }
+            &::selection {
+                background: none;
+            }
         }
         .selected {
             background: darkcyan;

@@ -13,28 +13,27 @@ const Login = observer(withRouter((formLoginProps) => {
     return (
         <article>
             <div>
-                <h1>Formulario de Ingreso</h1>
+                <h1>Log In Form</h1>
             </div>
             <form onSubmit={(event) => {
                 store.login();
                 event.preventDefault();
                 formLoginProps.history.push("/admin")
-
             }
             }>
                 <span>E-Mail</span>
                 <input className="mail" type="email" placeholder="example@gmail.com" onChange={() =>
                     store.handleChangeEmail((document.querySelector('.mail') as HTMLInputElement).value)
                 } />
-                <span>Contraseña</span>
+                <span>Password</span>
                 <input className="pass" type="password" placeholder="••••••••" onChange={() =>
                     store.handleChangePassword((document.querySelector('.pass') as HTMLInputElement).value)
                 } />
                 <button id="toRegister" onClick={() => {
                         formLoginProps.history.push("/");
                     }}
-                >No tengo cuenta, deseo registrarme</button>
-                <button type="submit">Ingresar</button>
+                >I do not have an account, I wish to register</button>
+                <button type="submit">Log In</button>
             </form>
 
             {store.errorLogin && <div>

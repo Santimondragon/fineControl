@@ -61,18 +61,18 @@ class Store {
     ];
 
     @observable houses: any[] = [
-        ["House 1", "Al día"],
-        ["House 2", "Al día"],
-        ["House 3", "Al día"],
-        ["House 4", "Al día"],
-        ["House 5", "Al día"],
-        ["House 6", "Al día"],
-        ["House 7", "Al día"],
-        ["House 8", "Al día"],
-        ["House 9", "Al día"],
-        ["House 10", "Al día"],
-        ["House 11", "Al día"],
-        ["House 12", "Al día"],
+        ["House 1", "inDebt"],
+        ["House 2", "inDebt"],
+        ["House 3", "inDebt"],
+        ["House 4", "upToDate"],
+        ["House 5", "upToDate"],
+        ["House 6", "upToDate"],
+        ["House 7", "inDebt"],
+        ["House 8", "inDebt"],
+        ["House 9", "inDebt"],
+        ["House 10", "upToDate"],
+        ["House 11", "upToDate"],
+        ["House 12", "inDebt"],
     ];
 
     @action handleChangeEmail(newEmail: string) {
@@ -122,6 +122,7 @@ class Store {
     @action onChangeHouseSelected(newHouseSelected: any) {
         this.houseSelected = newHouseSelected;
         localStorage.setItem('houseSelection', JSON.stringify(newHouseSelected));
+        
     };
 
     @action onFineModified(num: number) {

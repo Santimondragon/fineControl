@@ -21,7 +21,10 @@ const Documento = observer(() => {
                 <h3>_________________________<br />Santiago Mondragón <br/>cc: 1143866880</h3>
             </div>
             <div className="botones">
-                <button className="Print">Imprimir</button>
+                <button onClick={() =>{
+                    alert("Printing...")
+                }}
+                className="imprimir">Print</button>
             </div>
         </article>
     )
